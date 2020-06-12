@@ -16,7 +16,7 @@ import { loginUser } from '../redux/actions/userActions';
 
 const styles = (theme) => ({
   ...theme
-})
+});
 
 class login extends Component {
   constructor() {
@@ -28,7 +28,7 @@ class login extends Component {
     };
   }
   componentWillReceiveProps(nextProps) {
-    if(nextProps.UI.errors) {
+    if (nextProps.UI.errors) {
       this.setState({ errors: nextProps.UI.errors });
     }
   }
@@ -46,7 +46,10 @@ class login extends Component {
     });
   };
   render() {
-    const { classes, UI: { loading } } = this.props;
+    const {
+      classes,
+      UI: { loading }
+    } = this.props;
     const { errors } = this.state;
 
     return (
@@ -114,7 +117,7 @@ class login extends Component {
 login.propTypes = {
   classes: PropTypes.object.isRequired,
   loginUser: PropTypes.func.isRequired,
-  user: PropTypes.object.isRequired, 
+  user: PropTypes.object.isRequired,
   UI: PropTypes.object.isRequired
 };
 
@@ -125,6 +128,9 @@ const mapStateToProps = (state) => ({
 
 const mapActionsToProps = {
   loginUser
-}
+};
 
-export default connect(mapStateToProps, mapActionsToProps)(withStyles(styles)(login));
+export default connect(
+  mapStateToProps,
+  mapActionsToProps
+)(withStyles(styles)(login));
