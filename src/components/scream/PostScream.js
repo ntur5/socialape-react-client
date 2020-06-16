@@ -27,8 +27,8 @@ const styles = (theme) => ({
   },
   closeButton: {
     position: 'absolute',
-    left: '91%',
-    top: '6%'
+    left: '90%',
+    top: '4%'
   }
 });
 
